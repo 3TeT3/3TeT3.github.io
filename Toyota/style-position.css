@@ -1,0 +1,157 @@
+.car-title span{
+    writing-mode: vertical-lr;
+    vertical-align: middle;
+    font-size: 120px;
+
+}
+.car-content{
+    background-color: black;
+    color: #fff;
+    padding: 20px;
+    font-size: 20px;
+    line-height: 1.5;
+    
+}
+.car-content>h3{
+    font-size: 25px;
+    font-weight: bold;
+}
+.innovation-title{
+    color: black;
+    padding: 18px 0px;
+}
+.innovation h2{
+    color: #b60808;
+    font-weight: bold;
+    font-size: 20px;
+}
+.innovation>h2::after{
+    content: '―――――――――――――――――――――――';
+}
+.innovation>h3{
+    background-color: black;
+    color: #fff;
+    padding: 5px 15px;
+    
+}
+.innovation p{
+    margin: 10px 0;
+    line-height: 1.5;
+    
+}
+.innovation p::before{
+    content: '▪';
+    color: #b60808;
+}
+.car-group{
+    width: 940px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    margin: auto;
+    margin-bottom: 120px;
+}
+
+.car-title{
+    color: #fff;
+    background-color: #b60808;
+    font-size: 50px;
+}
+
+/*right (左圖右文1,3,5)*/
+.group-right{
+    margin-top: 150px;
+}
+.group-right .car-introduction{  /*紅+黑介紹*/
+    width: 400px;
+    position: absolute;
+    z-index: 9;
+    margin-top: -55px;
+    margin-left: -650px;
+    
+}
+
+.group-right .car-grey{
+    background-color: #ECECEC;
+    width: 450px;
+    height: 300px;
+    position: relative;
+    z-index: -1;
+    margin-right: -60%;
+    margin-bottom: -25%;
+
+
+}
+.group-right .innovation{
+    display: flex;
+    flex-direction: column;
+    background-color: #ECECEC;
+    align-items: flex-start;
+    width: 700px;
+    line-height: 1.5;
+    padding: 0px 20px;
+    font-size: 15px;
+    position: relative;
+    bottom:60px;
+    right: 120px;
+
+
+
+}
+.group-right img{
+    margin-left: 10%;
+}
+.group-right .YT-link{
+    position: relative;
+    z-index: 1;
+    left: 400px;
+    bottom: 230px;
+}
+/* left (右圖左文2,4)*/
+
+.group-left .car-title{
+    color: #fff;
+    background-color: #b60808;
+    text-align: right;
+}
+.group-left .car-grey{
+    background-color: #F2F2F2;
+    width: 518px;
+    height: 413px;
+    position: relative;
+    z-index: -1;
+    margin-left: 10%;
+    margin-bottom: -35%;
+    bottom: -35px;
+}
+.group-left .car-introduction{ /*紅+黑介紹*/
+    width: 350px;
+    position: absolute;
+    margin-left: 610px;
+    z-index: 5;
+    margin-top: -36px;
+}
+.group-left .innovation{
+    display: flex;
+    flex-direction: column;
+    background-color: #ddd;
+    align-items: flex-start;
+    width: 682px;
+    padding: 0 20px;
+    font-size: 16px;
+    position: relative;
+    bottom: 70px;
+    left: 120px;
+
+}
+.group-left .car-img{
+    margin-left: -20%;
+    
+}
+.group-left .YT-link{
+    position: relative;
+    z-index: 1;
+    right: 420px;
+    bottom: 240px;
+}

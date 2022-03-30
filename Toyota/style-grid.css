@@ -1,0 +1,131 @@
+.car-title span{
+    writing-mode: vertical-lr;
+    vertical-align: middle;
+    font-size: 120px;
+
+}
+.car-content{
+    background-color: #000;
+    color: #fff;
+    padding: 20px;
+    font-size: 20px;
+    line-height: 2;
+    
+}
+
+.innovation-title{
+    color: #000;
+    padding: 18px 0px;
+}
+.innovation h2{
+    color: #b60808;
+    font-weight: bolder;
+    font-size: 18px;
+}
+.innovation h3{
+    background-color: rgb(0, 0, 0);
+    color: #fff;
+    padding: 5px 15px;
+    
+}
+.innovation p{
+    margin: 5px;
+    
+}
+.innovation p::before{
+    content: '▪';
+    color: #b60808;
+}
+.car-group{
+    width: 940px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(30, 40px);
+    grid-template-rows: repeat(26, 40px);
+}
+.car-title{
+    color: #fff;
+    background-color: #b60808;
+    font-size: 40px;
+}
+/* right (左圖右文1,3,5)*/
+.group-right .car-introduction{
+    width: 350px;
+    grid-area: 2/2/12/14 ;
+    z-index: 9;
+}
+.group-right .car-img{
+    grid-area: 5/7/15/23;
+    
+}
+.group-right .innovation{
+    display: flex;
+    flex-direction: column;
+    background-color: #ECECEC;
+    align-items: flex-start;
+    line-height: 1;
+    padding: 0 20px;
+    font-size: 16px;
+    grid-area: 15/3/23/18;
+    z-index: 5;
+}
+.group-right .car-grey{ /*後面灰色*/
+    background-color: 	#F2F2F2;
+    z-index: -1;
+    grid-area: 3/15/10/26;
+    
+
+
+}
+.group-right .odd{
+    display: flex; 
+    flex-direction: column;
+    background-color: #eee;
+    align-items: flex-start;
+    width: 680px;
+    padding: 15px;
+    font-size: 16px;
+    grid-area: 15/3/20/18;
+    z-index: 1;
+}
+.group-right .YT-link{
+    grid-area: 11/23/12/24;
+
+}
+
+/* left (右圖左文2,4)*/
+.group-left .car-title{
+    color: #fff;
+    background-color: #b60808;
+    text-align: right;
+}
+.group-left .car-grey{
+    background-color: 	#F2F2F2;
+    z-index: -1;
+    grid-area: 3/8/13/22;
+    
+}
+.group-left .car-introduction{
+    width: 350px;
+    grid-area: 2/15/10/24;
+    z-index: 5;
+}
+.group-left .innovation{
+    display: flex;
+    flex-direction: column;
+    background-color: #ECECEC;
+    align-items: flex-start;
+    padding: 15px;
+    font-size: 15px;
+    grid-area: 15/8/20/24;
+    z-index: 1;
+
+}
+.group-left .car-img{
+    grid-area: 5/2/15/18;
+}
+
+.group-left .YT-link{
+    grid-area: 10/2/11/3;
+    
+}
