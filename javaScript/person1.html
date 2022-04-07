@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        .person{
+            width: 1000px;
+            margin: auto;
+            border: 1px solid red;
+            text-align: center;
+            border-radius: 5%;
+        }
+        .info h3 {
+            font-size: 25px;
+        }
+        .info h4 {
+            font-size: 20px;
+        }
+        .idol img{
+            width: 300px;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="person">
+        <div class="pic">
+            <img id="image">
+        </div>
+        <div class="info">
+            <h3>姓名：</h3>
+            <h4></h4>
+            <h3>Email：</h3> 
+            <h4></h4>
+            <h3>學校：</h3>  
+            <h4></h4>
+            <h3>興趣：</h3>    
+            <h4></h4>     
+        </div>
+        <div class="idol">
+            <div class="item">
+                <img>
+                <img>
+                <img>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        let personal = document.querySelectorAll("h4");
+        let content = ["徐秉詰", "tuching411086@gmail.com", "中華大學", "上網"];
+        let img = document.getElementById("image");
+        let picAll = document.querySelectorAll(".idol img");
+        
+        const imgUrl = "https://3tet3.github.io/1.jpg";
+
+        img.src = imgUrl;
+        content.forEach((x, index)=>{personal[index].innerText = content[index]});
+
+        const picArray = [
+            "https://3tet3.github.io/2.jpg",
+            "https://3tet3.github.io/3.jpg",
+            "https://3tet3.github.io/4.jpeg",
+        ];
+
+        picArray.forEach((x, index)=>{picAll[index].setAttribute("src", picArray[index])});
+    </script>
+</body>
+</html>
