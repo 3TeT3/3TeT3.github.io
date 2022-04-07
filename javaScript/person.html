@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <div class="personal">
+        <div class="img">
+            <div class="txt">
+                <h2 id = "txt-content"></h2>
+                <h2></h2>
+                <h2></h2>
+                <h2></h2>
+            </div>
+            <div class="idol_img"></div>
+            <img src="" alt="">
+            <img src="" alt="">
+            <img src="" alt="">
+        </div>
+    </div>
+
+    <script>
+        const title_title = ["Name", "E-mail", "School", "Interest "];
+        const info = ["徐秉詰", "tuching411086@gmail.com", "中華大學", "上網"];
+        
+        
+            let h_tag = document.querySelectorAll("h2");
+            h_tag.forEach((item, index) => {
+            item.innerText = title_title[index] + " : " + info[index];
+            console.log(item);
+        })
+
+        const imageArray = [
+        "https://picsum.photos/300/200/?random=10",
+        "https://picsum.photos/300/200/?random=10",
+        "https://picsum.photos/300/200/?random=10"
+        ];
+        imageArray.forEach((url, index) => {
+            document.write(`<img src=${url}>`);
+        });
+    </script>
+</body>
+</html>
