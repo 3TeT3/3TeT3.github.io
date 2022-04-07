@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .self{
+            width: 1000px;
+            margin: auto;
+            border: 1px solid red;
+            text-align: center;
+        }
+        img{
+            box-sizing: border-box;
+        }
+        .img-idol {
+            width: 1000px;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            padding: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="self">
+        <img class="img_header">
+        <div class="text">
+            <h1 id="first"></h1>
+            <h1></h1>
+            <h1></h1>
+            <h1></h1>
+        </div>
+        <div class="img-idol">
+            <img>
+            <img>
+            <img>
+        </div>
+    </div>
+
+    <div class="personal">
+        <div class="img">
+            <div class="txt">
+                <h2 id = "txt-content"></h2>
+                <h2></h2>
+                <h2></h2>
+                <h2></h2>
+            </div>
+            <div class="idol_img"></div>
+            <img src="" alt="">
+            <img src="" alt="">
+            <img src="" alt="">
+        </div>
+    </div>
+
+    <script>
+
+        const info_title = ["姓名", "E-mail", "學校", "興趣"];
+        const info = ["徐秉詰", "tuching411086@gmail.com", "中華大學", "上網"];
+        const imageArray = [
+            "https://picsum.photos/300/200/?random=10",
+            "https://picsum.photos/300/200/?random=10",
+            "https://picsum.photos/300/200/?random=10",
+            "https://picsum.photos/300/200/?random=10",
+        ]
+
+
+        let h_tag = document.querySelectorAll("h1");
+        h_tag.forEach((item, index) => {
+            item.innerText = info_title[index] + " : " + info[index];
+            console.log(item);
+        })
+
+
+        let img_tag = document.querySelectorAll("img");
+        img_tag.forEach((img_item, index) => {
+            img_item.setAttribute("src", imageArray[index]);
+        })
+
+
+        function calcauate_bmi() {
+            var a = document.getElementById("first");
+            a.innerHTML = "Hello wrold";
+
+            for (i = 0; i < h_tag.length; i++) {
+                a.innerHTML += i;
+            }
+            var height = document.getElementById("height").value - 0;
+            height = height/100;
+            var weight = document.getElementById("weight").value - 0;
+            var result = document.getElementById("result");
+            var bmi = weight / (height * height) ;
+            console.log(height);
+            console.log(weight);
+            console.log(bmi);
+            result.innerHTML = "BMI => " + bmi;
+        }
+    </script>
+</body>
+</html>
