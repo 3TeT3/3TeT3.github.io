@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>寶可夢圖鑑列表</h1>
+    <button id='loadall' onclick="allPokemon()">Load All</button>
+    <button id='addone' onclick="AddPokemon()">Click +1</button>
+    <button id='removeone' onclick="removePokemon()">Click -1</button>
+    <button id='reset' onclick="resetPokemon()">Reset</button>
+
+    <div id="container">
+
+    </div>
+
+    <script>
+        let container;
+        let fileName = 0;
+        let i = 0;  //紀錄目前到哪一隻
+
+        window.onload = function(){
+            container = document.getElementById("container");
+
+
+            // 註解第一張圖
+            // appendPokemon();
+        }
+
+        function appendPokemon(){
+            // 1.create <img>
+            let img = document.createElement("img");
+
+            // 2.Set <img>
+            img.setAttribute("src", "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/001.png");
+
+            // 3.append <img> into container
+            container.appendChild(img);
+        }
+
+        function appendPokemonByTemplate(){
+            let fileName = `https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${fileName}.png`;
+            let pokemonImg = `<img src='${pathFile}'>`;
+
+            container.innerHTML = pokemonImg;
+        }
+
+        function allPokemon(){
+            for(let i=1; i<898; i++){
+                let fileName=i.toString().padStart(3, "0");
+                let pathFile = `https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${fileName}.png`;
+            
+                let img = document.createElement("img");
+                img.setAttribute("src", pathFile);
+
+                // 點一下移除圖片
+                img.addEventListener("click", function(event){
+                    container.removeChild(event.target);
+                });
+
+                container.append(img);
+            }
+        }
+        // 點一下加一張圖片
+        function AddPokemon(){
+            i++;
+            for(    ;i<898;i++){
+                fileName =i.toString().padStart(3,"0");
+                let pathFile =  `https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${fileName}.png`;
+                let img = document.createElement("img");
+                img.setAttribute("src", pathFile)
+                return container.append(img);
+            };
+        }
+
+        function removePokemon(){
+            container.removeChild(container.lastChild);
+        }
+
+        function resetPokemon(){
+            container.innerHTML="";
+            i = 0;
+        }
+    </script>
+</body>
+</html>
