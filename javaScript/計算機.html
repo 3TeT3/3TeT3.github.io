@@ -1,0 +1,119 @@
+
+<!doctype html>
+<html lang="en">
+    <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+    <title>計算機</title>
+    <style>
+        .computer{
+            border: 1px solid black;
+            margin: 5%;
+            padding-left: 100px;
+        }
+        .text{
+            width: 200px;
+            text-align: center;
+        }
+        
+    </style>
+    </head>
+<body>
+
+    <div class="container">
+        <div class="computer mt-5">
+            <div class="my-3">
+                <input class="text form-control mb-2">
+            </div>
+            <div class="row-cols-3">
+                <div class="mb-3 group">
+                    <button class="btn btn-danger px-5 py-2" onclick="clear()">C</button>
+
+
+                    <button class="btn btn-warning" id="back">></button>
+                    <button class="btn btn-primary symbol" id="add">+</button>
+                </div>
+                <div class="mb-3">
+                    <button class="btn btn-dark num ">1</button>
+                    <button class="btn btn-dark num ">2</button>
+                    <button class="btn btn-dark num ">3</button>
+                    <button class="btn btn-primary symbol" id="">-</button>
+                </div>
+                <div class="mb-3">
+                    <button class="btn btn-dark num ">4</button>
+                    <button class="btn btn-dark num ">5</button>
+                    <button class="btn btn-dark num ">6</button>
+                    <button class="btn btn-primary symbol" id="">*</button>
+                </div>
+                <div class="mb-3">
+                    <button class="btn btn-dark num ">7</button>
+                    <button class="btn btn-dark num ">8</button>
+                    <button class="btn btn-dark num ">9</button>
+                    <button type="button" class="btn btn-primary symbol" id="">/</button>
+                </div>
+                <div class="mb-3">
+                    <button type="button" class="btn btn-success" id="equl">=</button>
+                    <button class="btn btn-dark num ">0</button>
+                    <button type="button" class="btn btn-info symbol" id="">.</button>
+                    <button type="button" class="btn btn-primary symbol" id="">%</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let keyInBtns = document.querySelectorAll('.num');
+        let input = document.querySelector(".text");
+        let back = document.getElementById("back");
+        let equl = document.getElementById("equl");
+
+        let symbol = document.querySelectorAll(".symbol");
+        let op = "";
+
+    
+    window.onload = function () {
+        document.querySelector(".btn-danger").addEventListener("click", function (event) {
+            clear();
+        })
+    }
+
+        //數字輸入
+        keyInBtns.forEach( k=>{
+            k.addEventListener('click', ()=>{keyIn()});
+        });
+        function keyIn(){
+            input.value += event.target.innerText;
+        }
+
+    //四則運算(加減乘除 %餘數 .小數點)
+    for(let i = 0; i < symbol.length; i++){
+        symbol[i].addEventListener('click',function(event){
+            op = event.target.innerText;
+            input.value += op;
+
+        });
+    }
+
+    //等於
+    equl.addEventListener('click',function(){
+        input.value = eval(input.value);            
+    });
+
+
+    function clear() {
+        input.value = "";
+    }
+
+
+    //退後
+    back.addEventListener('click',function(event){
+        input.value = input.value.substring(0,input.value.length-1);
+    })
+        </script>
+    </body>
+</html>
